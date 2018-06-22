@@ -3,8 +3,15 @@ import {
     Text,
     View,
     StyleSheet,
-    FlatList
+    FlatList,
+    Image
 } from 'react-native';
+
+const styles = StyleSheet.create({
+    text: {
+        color: '#fff'
+    },
+});
 
 const shows_first = [
     {
@@ -427,40 +434,33 @@ const shows_second = [
 class List extends Component {
     _renderItem(item) {
         return (
-            <Text>{item.name}</Text>
+            <Image style={{ width: 120, height: 180 }} source={{ uri: item.image }}/>
         )
     }
-    // render(){
-    //     return (
-    //         <View style={{flex: 1}}>
-    //             <View>
-    //                 <Text >My List</Text>
-    //                 <FlatList
-    //                     horizontal
-    //                     SeparatorComponent={() => <View style={{width: 5}} />}
-    //                     renderItem={({item}) => this._renderItem(item)}
-    //                     data={shows_first}
-    //                 />
-    //             </View>
-    //             <View>
-    //                 <Text >Top Picks For You</Text>
-    //                 <FlatList
-    //                     horizontal
-    //                     SeparatorComponent={() => <View style={{width: 5}} />}
-    //                     renderItem={({item}) => this._renderItem(item)}
-    //                     data={shows_second}
-    //                 />
-    //             </View>
-    //         </View>
-    //     )
-    // }
+
     render() {
         return (
             <View style={{ flex: 1 }}>
+                <View>
+                <Text style={ styles.text}>My List</Text>
                 <FlatList
+                    horizontal
+                    ItemSeparatorComponent={() => <View style={{ width: 5 }}/>}
+                    keyExtractor = {(item) => `key-${item.key}`}
                     renderItem={({item}) => this._renderItem(item)}
                     data={shows_first}
                 />
+                </View>
+                <View>
+                <Text style={ styles.text}>Top Picks For You</Text>
+                <FlatList
+                    horizontal
+                    ItemSeparatorComponent={() => <View style={{ width: 5 }}/>}
+                    keyExtractor = {(item) => `key-${item.key}`}
+                    renderItem={({item}) => this._renderItem(item)}
+                    data={shows_second}
+                />
+                </View>
             </View>
         )
     }
