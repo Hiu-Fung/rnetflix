@@ -4,22 +4,23 @@ import {
     Text,
     View
 } from 'react-native';
-
 import List from './components/List';
 
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//         backgroundColor: '#fff',
-//         alignItems: 'center',
-//         justifyContent: 'center',
-//     },
-// });
+const styles = StyleSheet.create({
+    container: {
+        // flex: 1,
+        backgroundColor: '#000',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+    },
+});
 
 export default class App extends Component {
     render() {
         return (
-            <List/>
+            <View style={[{ flex: 1 }, styles.container]}>
+                <List/>
+            </View>
         );
     }
 }
