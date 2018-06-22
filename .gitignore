@@ -1,0 +1,10 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+
+# IDEA/Webstorm project files
+.idea
+*.iml
+
+# Logs
+*.log
