@@ -43,7 +43,8 @@ export default class extends Component {
         return (
             <View style={{ height: 240 } }>
                 <Swiper
-                    autoPlay
+                    autoplay
+                    autoplayTimeout={3.5}
                 >
                 {
                     this.state.imagesSlider.map(( item, i ) => <Slider
