@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
 
 const Header = props => (
     <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={() => null}>
+        <TouchableWithoutFeedback onPress={() => props.toggle() }>
             <Icon
                 name="bars"
                 color="white"
