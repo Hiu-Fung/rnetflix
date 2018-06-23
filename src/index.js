@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 
 import List from './components/List';
+import Header from './components/Header';
 import Slider from './components/Slider';
 
 const styles = StyleSheet.create({
@@ -23,6 +24,7 @@ export default class App extends Component {
             <View style={[{ flex: 1 }, styles.container]}>
                 <Slider/>
                 <List/>
+                    <Header/>
             </View>
         );
     }
