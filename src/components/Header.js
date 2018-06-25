@@ -27,21 +27,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 //     }
 // }
 
-const styles = StyleSheet.create({
-   container: {
-       flexDirection: 'row',
-       height: 80,
-       alignItems: 'center',
-       justifyContent: 'space-between',
-       backgroundColor: '#000',
-       paddingHorizontal: 15
-   },
-    logo: {
-        width: 120,
-        height: 40
-    }
-});
-
 const Header = props => (
     <View style={styles.container}>
         <TouchableWithoutFeedback onPress={() => props.toggle() }>
@@ -60,5 +45,19 @@ const Header = props => (
     </View>
 );
 
+const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        height: 80,
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        backgroundColor: '#000',
+        paddingHorizontal: 15
+    },
+    logo: {
+        width: 120,
+        height: 40
+    }
+});
 
 export default Header

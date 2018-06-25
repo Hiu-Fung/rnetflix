@@ -10,17 +10,6 @@ import Swiper from 'react-native-swiper';
 
 const { width } = Dimensions.get('window');
 
-const styles = {
-    container: {
-        flex: 1,
-        justifyContent: 'center'
-    },
-    image: {
-        flex: 1,
-        width
-    },
-};
-
 const Slider = props => ( <View style={styles.container}>
         <Image style={styles.image} source={props.uri}/>
     </View>
@@ -57,3 +46,14 @@ export default class extends Component {
         )
     }
 }
+
+const styles = {
+    container: {
+        flex: 1,
+        justifyContent: 'center'
+    },
+    image: {
+        flex: 1,
+        width
+    },
+};

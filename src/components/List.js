@@ -7,12 +7,6 @@ import {
     Image
 } from 'react-native';
 
-const styles = StyleSheet.create({
-    text: {
-        color: '#fff'
-    },
-});
-
 const shows_first = [
     {
         key: 1,
@@ -465,5 +459,11 @@ class List extends Component {
         )
     }
 }
+
+const styles = StyleSheet.create({
+    text: {
+        color: '#fff'
+    },
+});
 
 export default List;
