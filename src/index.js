@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {
     StyleSheet,
     Text,
-    View
+    View,
 } from 'react-native';
 
 import SideMenu from 'react-native-side-menu';
@@ -12,13 +12,14 @@ import Slider from './components/Slider';
 import List from './components/List';
 import Menu from './components/Menu';
 
+
 const styles = StyleSheet.create({
     container: {
-        // flex: 1,
+        flex: 1,
         backgroundColor: '#000',
         // alignItems: 'center',
         // justifyContent: 'center',
-    },
+    }
 });
 
 export default class App extends Component {
@@ -27,13 +28,14 @@ export default class App extends Component {
 
         this.state = {
             isOpen: false,
+            overlayOpacity: 0
         };
 
         this.toggle = this.toggle.bind(this);
+        // this.animationStyle = this.animationStyle.bind(this);
     }
 
     toggle() {
-        console.log('toggle');
         this.setState({
             isOpen: !this.state.isOpen
         })
@@ -44,16 +46,20 @@ export default class App extends Component {
     }
 
     render() {
+        const { overlayOpacity } = this.state;
+
         return (
-            <View style={[{ flex: 1 }, styles.container]}>
+            <View style={styles.container}>
                 <SideMenu
-                    menu={'test'}
+                    menu={<Menu />}
                     isOpen={this.state.isOpen}
                     onChange={isOpen => this.updateMenu(isOpen)}
                 >
-                    <Header toggle={this.toggle}/>
-                    <Slider/>
-                    <List/>
+                    <View style={styles.container}>
+                        <Header toggle={this.toggle}/>
+                        <Slider/>
+                        <List/>
+                    </View>
                 </SideMenu>
             </View>
         );
