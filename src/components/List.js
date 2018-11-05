@@ -424,7 +424,6 @@ const shows_second = [
     }
 ];
 
-
 class List extends Component {
     _renderItem(item) {
         return (

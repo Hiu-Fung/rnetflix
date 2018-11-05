@@ -9,24 +9,6 @@ import {
 
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-// export default class Header extends Component {
-//     // constructor(props) {
-//     //     super(props);
-//     //
-//     //     this.state = {
-//     //         image: {
-//     //
-//     //         }
-//     //     }
-//     // }
-//
-//     render() {
-//         return (
-//             <View/>
-//         )
-//     }
-// }
-
 const Header = props => (
     <View style={styles.container}>
         <TouchableWithoutFeedback onPress={() => props.toggle() }>
